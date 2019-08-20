@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">Weather Mini Challenger</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars"
+            aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse">
+        <div class="navbar-nav mr-auto"></div>
+        <form class="form-inline">
+            <div class="form-group mb-2">
+                <select name="lang" class="form-control">
+                    <option value="ar" {% ifequal lang 'ar' %}selected{% endifequal %}>Arabic</option>
+                    <option value="bg" {% ifequal lang 'bg' %}selected{% endifequal %}>Bulgarian</option>
+                    <option value="ca" {% ifequal lang 'ca' %}selected{% endifequal %}>Catalan</option>
+                    <option value="cz" {% ifequal lang 'cz' %}selected{% endifequal %}>Czech</option>
+                    <option value="de" {% ifequal lang 'de' %}selected{% endifequal %}>German</option>
+                    <option value="el" {% ifequal lang 'el' %}selected{% endifequal %}>Greek</option>
+                    <option value="en" {% ifequal lang 'en' %}selected{% endifequal %}>English</option>
+                    <option value="fa" {% ifequal lang 'fa' %}selected{% endifequal %}>Persian (Farsi)</option>
+                    <option value="fi" {% ifequal lang 'fi' %}selected{% endifequal %}>Finnish</option>
+                    <option value="fr" {% ifequal lang 'fr' %}selected{% endifequal %}>French</option>
+                    <option value="gl" {% ifequal lang 'gl' %}selected{% endifequal %}>Galician</option>
+                    <option value="hr" {% ifequal lang 'hr' %}selected{% endifequal %}>Croatian</option>
+                    <option value="hu" {% ifequal lang 'hu' %}selected{% endifequal %}>Hungarian</option>
+                    <option value="it" {% ifequal lang 'it' %}selected{% endifequal %}>Italian</option>
+                    <option value="ja" {% ifequal lang 'ja' %}selected{% endifequal %}>Japanese</option>
+                    <option value="kr" {% ifequal lang 'kr' %}selected{% endifequal %}>Korean</option>
+                    <option value="la" {% ifequal lang 'la' %}selected{% endifequal %}>Latvian</option>
+                    <option value="lt" {% ifequal lang 'lt' %}selected{% endifequal %}>Lithuanian</option>
+                    <option value="mk" {% ifequal lang 'mk' %}selected{% endifequal %}>Macedonian</option>
+                    <option value="nl" {% ifequal lang 'nl' %}selected{% endifequal %}>Dutch</option>
+                    <option value="pl" {% ifequal lang 'pl' %}selected{% endifequal %}>Polish</option>
+                    <option value="pt" {% ifequal lang 'pt' %}selected{% endifequal %}>Portuguese</option>
+                    <option value="ro" {% ifequal lang 'ro' %}selected{% endifequal %}>Romanian</option>
+                    <option value="ru" {% ifequal lang 'ru' %}selected{% endifequal %}>Russian</option>
+                    <option value="se" {% ifequal lang 'se' %}selected{% endifequal %}>Swedish</option>
+                    <option value="sk" {% ifequal lang 'sk' %}selected{% endifequal %}>Slovak</option>
+                    <option value="sl" {% ifequal lang 'sl' %}selected{% endifequal %}>Slovenian</option>
+                    <option value="es" {% ifequal lang 'es' %}selected{% endifequal %}>Spanish</option>
+                    <option value="tr" {% ifequal lang 'tr' %}selected{% endifequal %}>Turkish</option>
+                    <option value="ua" {% ifequal lang 'ua' %}selected{% endifequal %}>Ukrainian</option>
+                    <option value="vi" {% ifequal lang 'vi' %}selected{% endifequal %}>Vietnamese</option>
+                    <option value="zh_cn" {% ifequal lang 'zh_cn' %}selected{% endifequal %}>Chinese Simplified</option>
+                    <option value="zh_tw" {% ifequal lang 'zh_tw' %}selected{% endifequal %}>Chinese Traditional</option>
+                  </select>
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" name="city" placeholder="City" value="{{ city }}">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">GO</button>
+        </form>
+    </div>
+</nav>

@@ -1,0 +1,34 @@
+{% extends 'website/_base.html' %}
+{% load website %}
+{% block content %}
+    {% if erro_message %}
+        <section class="jumbotron pt-2 pb-2 bg-danger" style="border-radius: unset">
+            <div class="container text-center">
+                <h3 class="display-5 text-white m-0">{{ erro_message }}</h3>
+            </div>
+        </section>
+    {% else %}
+        {% week_days_rain data.list as wek_days_rain %}
+        <section class="jumbotron pt-2 pb-2 bg-light" style="border-radius: unset">
+            <div class="container text-center">
+                <h1 class="display-5">{{ data.city.name }}</h1>
+                <p class="lead text-warning font-weight-bold">You should take an umbrella in these days</p>
+                <div class="d-inline-block">
+                    {% for day in wek_days_rain %}
+                    <span class="badge badge-danger">{{ day|date_from_ts|date:"l" }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    {% for result in data.list %}
+                        <!-- Card -->
+                        {% include 'website/widgets/card.html' with result=result %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

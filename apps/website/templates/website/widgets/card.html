@@ -1,0 +1,22 @@
+{% load website %}
+{% with result.weather.0 as weather %}
+<div class="col-sm-6 {% if forloop.counter < 5 %}col-lg-3 mb-3{% else %}col-lg-4 mb-4{% endif %}">
+    <div class="card weather-card p-2">
+        <small class="week {% if result.humidity > 70 %}week-rain{% endif %}">{{ result.dt|date_from_ts|date:"l" }}</small>
+        <div class="d-flex justify-content-between">
+            <p class="display-4 degree">{{ result.humidity|stringformat:".2d" }}</p>
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+        </div>
+        <!-- Card content -->
+        <div class="card-body p-0 pl-0">
+            <!-- Title -->
+            <h6 class="card-title font-weight-bold text-info">{{ weather.description|upper }}</h6>
+            <!-- Text -->
+            <div class="d-flex justify-content-between">
+                <p><i class="fa fa-angle-down fa-lg text-info pr-2"></i>{{ result.temp.min }}º</p>
+                <p><i class="fas fa-angle-up fa-lg text-danger pr-2"></i>{{ result.temp.max }}º</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endwith %}
