@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+md&80ihvbj@(!or6@b(&2myj05*l1$y1k4tx=if36=yrovf&#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['young-atoll-32101.herokuapp.com']
 
